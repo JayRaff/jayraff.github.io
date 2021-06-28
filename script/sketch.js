@@ -1,7 +1,7 @@
 let c,s
 
 function setup() {
-  createCanvas(1000, 1000);
+  createCanvas(1000, 600);
   background(220)
   c = 0
   s = 3
@@ -256,14 +256,14 @@ function draw() {
     
   //draw button
   fill('black')
-  rect(40,460,70,70)
+  rect(width-960,height-540,70,70)
   textAlign(CENTER)
   textSize(15)
   fill(255)
   text("clear",width-920,height-500)
   
   //button logic
-  if(mouseX > 40 && mouseX < 110 && mouseY > 460 && mouseY < 530 && mouseIsPressed){
+  if(mouseX > width-960 && mouseX < width-890 && mouseY > height-540 && mouseY < width-470 && mouseIsPressed){
     clear();
   background(220);
 
