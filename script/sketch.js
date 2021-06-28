@@ -1,7 +1,7 @@
 let c,s
 
 function setup() {
-  createCanvas(2000, 500);
+  createCanvas(1000, 1000);
   background(220)
   c = 0
   s = 3
