@@ -211,13 +211,12 @@ function draw() {
 
   }
 
+  textSize(10)
   stroke("red")
-  text("Welcome to PAINTSPLASH VERSION 4",300,100)
-  text("The app is simple to use,",300,120)
-  text("Change colours by click on the desired colour,",300,140)
-  text("The erase and text button work respectively and ",300,160)
-  text("Click the up to increase and down arrow to decrease the thickness of your pen",300,180)
-  text("Ready?Click to start")
+   textAlign(CENTER)
+  text("Welcome to PAINTSPLASH VERSION 4!The app is simple to use,change colours by click on the desired colour,the erase and clear buttons work respectively and click the up arrow to increase and down arrow to decrease ",500,30)
+   text("the thickness of your pen.Ready?Have fun!",100,40)
+ 
   
   
 
