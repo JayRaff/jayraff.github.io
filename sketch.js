@@ -1,10 +1,11 @@
-let c,s
+let c,s, keyDownFlag
 
 function setup() {
   createCanvas(1000, 600);
   background(220)
   c = 0
   s = 3
+  keyDownFlag = 0
 
 }
 
@@ -171,86 +172,25 @@ function draw() {
   
   //button logic
   if(d10 < r && mouseIsPressed){
-   c = 620  
+   c = 220  
   }
   
+  // up Arrow and down Arrow
   
+  if (keyIsDown(UP_ARROW) && keyDownFlag == 0 && s < 25 ) {
+    s = s+1;
+    keyDownFlag =1;
+  } else if (keyIsDown(DOWN_ARROW) && keyDownFlag == 0 && s > 1 ) {
+    s = s-1; 
+    keyDownFlag =1;
+  } 
   
-  //Change thickness to ultra thin
+  print(s);
+  print(keyDownFlag);
+  //textSize(50)
+  //strokeWeight(1)
+  //text(s,200,200);
   
-  //draw button
-  fill('black')
-  ellipse(width-920,height-260,50,50)
-  textAlign(CENTER)
-  textSize(10)
-  fill(255)
-  text("ultra thin",width-920,height-260)
-  
-  //compute distance
-  d9 = dist(mouseX,mouseY,width-920,height-260)
-  r = 50/2
-  
-  //button logic
-  if(d9 < r && mouseIsPressed){
-   s = 1  
-  }
-  
-  //Change thickness to thin
-  
-  //draw button
-  fill('black')
-  ellipse(width-920,height-320,50,50)
-  textAlign(CENTER)
-  textSize(20)
-  fill(255)
-  text("thin",width-920,height-320)
-  
-  //compute distance
-  d9 = dist(mouseX,mouseY,width-920,height-320)
-  r = 50/2
-  
-  //button logic
-  if(d9 < r && mouseIsPressed){
-   s = 2  
-  }
-  
-  //Change thickness to thick
-  
-  //draw button
-  fill('black')
-  ellipse(width-920,height-380,50,50)
-  textAlign(CENTER)
-  textSize(20)
-  fill(255)
-  text("thick",width-920,height-380)
-  
-  //compute distance
-  d9 = dist(mouseX,mouseY,width-920,height-380)
-  r = 50/2
-  
-  //button logic
-  if(d9 < r && mouseIsPressed){
-   s = 8  
-  }
-  
-  //Change thickness to 4
-  
-  //draw button
-  fill('black')
-  ellipse(width-920,height-440,50,50)
-  textAlign(CENTER)
-  textSize(10)
-  fill(255)
-  text("super thick",width-920,height-440)
-  
-  //compute distance
-  d9 = dist(mouseX,mouseY,width-920,height-440)
-  r = 50/2
-  
-  //button logic
-  if(d9 < r && mouseIsPressed){
-   s = 20  
-  }
 
   //Clear button
     
@@ -263,16 +203,27 @@ function draw() {
   text("clear",width-920,height-500)
   
   //button logic
-  if(mouseX > width-960 && mouseX < width-890 && mouseY > height-540 && mouseY < width-470 && mouseIsPressed){
+  if(mouseX > width-960 && mouseX < width-890 && mouseY > height-540 && mouseY < height-470 && mouseIsPressed){
     clear();
+    s = 3;
+    c = 0;
   background(220);
 
   }
 
-
-
+  textSize(10)
+  stroke("red")
+   textAlign(CENTER)
+  text("Welcome to PAINTSPLASH VERSION 4!The app is simple to use,change colours by click on the desired colour,the erase and clear buttons work respectively and click the up arrow to increase and down arrow to decrease ",500,30)
+   text("the thickness of your pen.Ready?Have fun!",100,40)
  
   
   
 
   } 
+  function keyReleased(){
+   keyDownFlag =0;
+    return false; // prevent any default behavior
+    
+
+}
